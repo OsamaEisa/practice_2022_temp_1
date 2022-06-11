@@ -1,0 +1,432 @@
+
+/* Global rules */
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Work sans", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.special-heading {
+  color: #ebeced;
+  font-size: 100px;
+  text-align: center;
+  letter-spacing: -4px;
+  margin: 0;
+  font-weight: 800;
+}
+.special-heading + p {
+  text-align: center;
+  margin: -40px 0 0;
+  font-size: 20px;
+  color: #797979;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px
+}
+
+/* Global rules */
+
+/* Variables */
+:root {
+  --main-color: #10cab7;
+  --sec-color: #2c4755;
+  --back-col: #f6f6f6;
+  --padding-sec: 60px;
+}
+/* Variables */
+
+.parent {
+  background-color: #EEE;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* Mobile Screens */
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  }
+}
+
+/* small screens */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Header */
+
+.header {
+  padding: 20px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  width: 60px;
+}
+.header .links {
+  position: relative;
+}
+.header .links:hover .icon span:nth-child(2) {
+  width: 100%;
+}
+.header .links .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.header .links .icon span {
+  background-color: #333;
+  height: 2px;
+  margin-bottom: 5px;
+}
+.header .links .icon span:first-child, .header .links .icon span:last-child {
+  width: 100%;
+}
+.header .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: 0.3s;
+}
+.header .links ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 20px);
+  min-width: 200px;
+  background-color: var(--back-col);
+  display: none;
+  z-index: 1;
+}
+.header .links:hover ul {
+  display: block;
+}
+.header .links ul::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--back-col) transparent;
+}
+.header .links ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 15px;
+    transition: 0.3s;
+}
+.header .links ul li a:hover {
+  padding-left: 25px;
+}
+.header .links ul li:not(last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Header */
+
+/* Landing part */
+
+.landing {
+  background: url(/images/mountain-bAndW-2.jpg);
+  background-size: cover;
+  height: calc(100vh - 64px);
+}
+.landing .intro-text {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 380px;
+  max-width: 100%;
+}
+.landing .intro-text h1 {
+  margin: 0;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 50px;
+}
+.landing .intro-text p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+/* Landing part */
+
+/* Features */
+
+.features {
+  padding: var(--padding-sec) 0;
+  background-color: var(--back-col);
+}
+.features .feat {
+  padding: 20px;
+  text-align: center;
+}
+.features .feat i {
+  color: var(--main-color);
+}
+.features .feat h3 {
+  margin: 30px 0;
+  font-weight: 800;
+}
+.features .feat p {
+  line-height: 1.8;
+  color: #777;
+  font-size: 17px;
+}
+/* Features */
+
+/* Services */
+
+.services {
+  padding: var(--padding-sec) 0;
+}
+.services .services-content {
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+.services .services-content .srv {
+  display: flex;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .services .services-content .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.services .services-content .srv i {
+  color: var(--main-color);
+  flex-basis: 60px;
+}
+.services .services-content .srv .srv-text {
+  flex: 1
+}
+.services .services-content .srv .srv-text h3 {
+  margin: 0 0 20px;
+}
+.services .services-content .srv .srv-text p {
+  color: #444;
+  line-height: 1.6;
+  font-weight: 300;
+}
+.services .services-content .srv-image {
+  text-align: center;
+  position: relative;
+}
+.services .services-content .srv-image::before {
+  content: "";
+  background-color: var(--sec-color);
+  position: absolute;
+  top: -44px; right: 0;
+  width: 110px;
+  height: calc(100% + 90px);
+  z-index: -1;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.srv-image img {
+  width: 285px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media (max-width: 1199px) {
+  .srv-image {
+    display: none;
+  }
+}
+/* Services */
+
+/* Portfolio */
+
+.portfolio {
+  padding: var(--padding-sec) 0;
+  background-color: var(--back-col);
+}
+.portfolio .portfolio-content {
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+.portfolio .portfolio-content .card {
+  background-color: #FFF;
+}
+.portfolio .portfolio-content .card img {
+  max-width: 100%;
+}
+.portfolio .portfolio-content .card .card-info { 
+  padding: 20px;
+}
+.portfolio .portfolio-content .card .card-info h3 {
+  margin: 0;
+}
+.portfolio .portfolio-content .card .card-info p {
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+/* Portfolio */
+
+/* About */
+
+.about {
+  padding-top: var(--padding-sec);
+  padding-bottom: calc(var(--padding-sec) + 60px);
+}
+.about .about-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+@media (max-width: 991px) {
+  .about .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.about .about-content .about-img {
+  position: relative;
+  width: 270px;
+  height: 370px;
+}
+.about .about-content .about-img::before, .about .about-content .about-img::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+.about .about-content .about-img::before {
+  width: 100px;
+  height: calc(100% + 80px);
+  top: -50px;
+  left: -15px;
+  background-color: #ebeced;
+}
+.about .about-content .about-img::after {
+  width: 120px;
+  height: 260px;
+  border-bottom: 60px solid var(--main-color);
+  border-left: 80px solid var(--main-color);
+  right: -150px;
+  top: -40px;
+}
+@media (max-width: 991px) {
+  .about .about-content .about-img::after, .about .about-content .about-img::before {
+    display: none;
+  }
+  .about .about-content .about-img {
+    margin: 0 auto 15px;
+  }
+}
+.about .about-content .about-img img {
+  width: 100%;
+}
+.about .about-content .about-info {
+  flex-basis: calc(100% - 500px);
+}
+.about .about-content .about-info p:first-of-type {
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+.about .about-content .about-info hr {
+  width: 50%;
+  display: inline-block;
+  border-color: var(--main-color);
+}
+.about .about-content .about-info p:last-of-type {
+  line-height: 2;
+  color: #777;
+}
+
+/* About */
+
+/* Contact */
+
+.contact, .contact .contact-info {
+  padding: var(--padding-sec) 0;
+  background-color: var(--back-col);
+}
+.contact .contact-info { 
+  text-align: center;
+}
+.contact .contact-info .contact-text {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--sec-color);
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+.contact .contact-info .contact-link {
+  text-decoration: none;
+  display: block;
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--main-color);
+}
+.contact .contact-info .social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.contact .contact-info .social i {
+  color: var(--sec-color);
+  margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .contact .contact-info .contact-text {
+    font-size: 25px;
+  }
+  .contact .contact-info .contact-link {
+    font-size: 21px;
+  }
+}
+/* Contact */
+
+/* Footer */
+
+.footer {
+  background-color: var(--sec-color);
+  color: #FFF;
+  padding: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+.footer span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+/* Footer */
