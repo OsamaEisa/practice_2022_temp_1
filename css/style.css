@@ -160,7 +160,7 @@ html {
 /* Landing part */
 
 .landing {
-  background: url(images/mountain-bAndW-2.jpg);
+  background: url(../images/mountain-bAndW-2.jpg);
   background-size: cover;
   height: calc(100vh - 64px);
 }
